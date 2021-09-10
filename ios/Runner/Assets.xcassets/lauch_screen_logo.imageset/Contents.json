@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "lauch_screen_logo.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
