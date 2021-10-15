@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Modify this file to customize your launch splash screen -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@android:color/white" />
+    <item android:drawable="@android:color/black" />
 
     <!-- You can insert your own image assets here -->
-    <!-- <item>
+    <!-- android:gravity="clip_vertical" -->
+    <item>
         <bitmap
-            android:gravity="center"
-            android:src="@mipmap/launch_image" />
-    </item> -->
+                android:right="0dp"
+                android:left="0dp"
+                android:src="@drawable/lauch_screen_background" />
+    </item>
+    <item>
+        <bitmap
+                android:gravity="center"
+                android:src="@drawable/lauch_screen_logo" />
+    </item>
 </layer-list>
