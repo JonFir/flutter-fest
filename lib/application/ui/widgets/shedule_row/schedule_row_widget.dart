@@ -18,7 +18,9 @@ class _ScheduleRowSingleSessionWidget extends ScheduleRowWidget {
   Widget build(BuildContext context) {
     return Row(
       children: const [
-        ScheduleRowSessionWidget(),
+        Expanded(
+          child: ScheduleRowSessionWidget(),
+        ),
       ],
     );
   }
