@@ -16,10 +16,20 @@ class _ScheduleRowSingleSessionWidget extends ScheduleRowWidget {
 
   @override
   Widget build(BuildContext context) {
+    const configuration = ScheduleRowSessionWidgetConfiguration(
+      avatarUrl: 'https://klike.net/uploads/posts/2019-06/1560329641_2.jpg',
+      speakerName: 'Алексей Чулпин',
+      sessionTitle: 'Субьективность в оценке дизайна',
+      isFavorite: true,
+      progressStatus:
+          ScheduleRowSessionWidgetConfigurationProgressStatus.oncoming,
+    );
     return Row(
       children: const [
         Expanded(
-          child: ScheduleRowSessionWidget(),
+          child: ScheduleRowSessionWidget(
+            configuration: configuration,
+          ),
         ),
       ],
     );
