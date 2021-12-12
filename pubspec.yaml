@@ -55,7 +55,7 @@ flutter:
           weight: 500
     - family: Steinbeck
       fonts:
-        - asset: assets/fonts/steinbeck/regular.otf
+        - asset: assets/fonts/steinbeck/regular.ttf
     - family: ComforterBrush
       fonts:
         - asset: assets/fonts/comforter_brush/regular.ttf
