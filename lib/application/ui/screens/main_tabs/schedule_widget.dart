@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fest/application/ui/themes/app_colors.dart';
 import 'package:flutter_fest/application/ui/widgets/shedule_row/schedule_row_widget.dart';
 import 'package:flutter_fest/resources/resources.dart';
 
@@ -149,8 +150,8 @@ class _SectionButtonsWidget extends StatelessWidget {
                       begin: Alignment(-currentGradientStartPont, 0.0),
                       end: Alignment(currentGradientEndPont, 0.0),
                       colors: const <Color>[
-                        Color(0xFF00BD13),
-                        Color(0xFF170AF4),
+                        AppColors.green,
+                        AppColors.blue,
                       ],
                     ),
                     borderRadius: const BorderRadius.all(Radius.circular(80.0)),

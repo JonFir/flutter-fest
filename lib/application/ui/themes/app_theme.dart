@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fest/application/ui/themes/app_colors.dart';
 
 abstract class AppTheme {
   static final light = ThemeData(
     primarySwatch: Colors.blue,
-    scaffoldBackgroundColor: Colors.black,
+    scaffoldBackgroundColor: AppColors.darkBackground,
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      backgroundColor: Colors.black,
-      selectedItemColor: Color(0xFF00BD13),
-      unselectedItemColor: Color(0xFF52525E),
+      backgroundColor: AppColors.darkBackground,
+      selectedItemColor: AppColors.green,
+      unselectedItemColor: AppColors.darkText,
     ),
   );
 }

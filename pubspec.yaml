@@ -53,6 +53,23 @@ flutter:
         - asset: assets/fonts/basis_grotesque_pro/regular.ttf
         - asset: assets/fonts/basis_grotesque_pro/medium.ttf
           weight: 500
+        - asset: assets/fonts/basis_grotesque_pro/bold.otf
+          weight: 700
+        - asset: assets/fonts/basis_grotesque_pro/regular_italic.otf
+          style: italic
+        - asset: assets/fonts/basis_grotesque_pro/bold_italic.otf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/basis_grotesque_pro/black.ttf
+          weight: 900
+        - asset: assets/fonts/basis_grotesque_pro/black_italic.otf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/basis_grotesque_pro/light.otf
+          weight: 300
+        - asset: assets/fonts/basis_grotesque_pro/light_italic.otf
+          weight: 900
+          style: italic
     - family: Steinbeck
       fonts:
         - asset: assets/fonts/steinbeck/regular.ttf
