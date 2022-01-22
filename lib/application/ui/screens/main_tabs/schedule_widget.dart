@@ -2,33 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_fest/application/ui/themes/app_colors.dart';
 import 'package:flutter_fest/application/ui/widgets/shedule_row/schedule_row_break_widget.dart';
 import 'package:flutter_fest/application/ui/widgets/shedule_row/schedule_row_widget.dart';
-import 'package:flutter_fest/application/ui/widgets/top_notifications/top_notification_overlay_widget.dart';
-import 'package:flutter_fest/application/ui/widgets/top_notifications/top_text_notification_widget.dart';
+import 'package:flutter_fest/application/ui/widgets/top_notifications/top_notification_manager.dart';
 import 'package:flutter_fest/resources/resources.dart';
+import 'package:provider/provider.dart';
 
-class ScheduleWidget extends StatefulWidget {
+class ScheduleWidget extends StatelessWidget {
   const ScheduleWidget({Key? key}) : super(key: key);
 
-  @override
-  State<ScheduleWidget> createState() => _ScheduleWidgetState();
-}
-
-class _ScheduleWidgetState extends State<ScheduleWidget> {
-  OverlayEntry? _lectionOverlay;
-
   void showOverlay(BuildContext context) {
-    final overlay = _lectionOverlay;
-    if (overlay != null) {
-      overlay.remove();
-      _lectionOverlay = null;
-      return;
-    }
-    const textWidget = TopTextNotificationWidget(
-      text: "Лекция добавлена в программу",
-    );
-    final entry = TopNotificationOverlayWidget.makeOverlayEntry(textWidget);
-    _lectionOverlay = entry;
-    Overlay.of(context)?.insert(entry);
+    context.read<TopNotificationManager>().show("sdkjfhsjhdfhjdsghjf");
   }
 
   @override
