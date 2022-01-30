@@ -119,4 +119,31 @@ abstract class AppTextStyle {
     height: 40 / 36,
     letterSpacing: 0.0,
   );
+
+  static const dialogTitle = TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.normal,
+    fontFamily: AppFonts.basisGrotesquePro,
+    height: 22 / 17,
+    letterSpacing: 0.0,
+  );
+
+  static const dialogAction = TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+    fontFamily: AppFonts.basisGrotesquePro,
+    height: 22 / 17,
+    letterSpacing: 0.0,
+  );
+
+  static const dialogCancelAction = TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.normal,
+    fontFamily: AppFonts.basisGrotesquePro,
+    height: 22 / 17,
+    letterSpacing: 0.0,
+  );
 }
