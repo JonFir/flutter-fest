@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fest/application/ui/navigation/main_navigation.dart';
 import 'package:flutter_fest/application/ui/widgets/shedule_row/schedule_row_session_widget.dart';
 import 'package:flutter_fest/application/ui/widgets/shedule_row/schedule_row_time_widget.dart';
 
@@ -32,20 +33,34 @@ class _ScheduleRowSingleSessionWidget extends ScheduleRowWidget {
       endTime: "12:00",
       progressStatus: progressStatus,
     );
-    return IntrinsicHeight(
-      child: Row(
-        children: const [
-          ScheduleRowTimeWidget(
-            configuration: ddd,
+    return Stack(
+      children: [
+        IntrinsicHeight(
+          child: Row(
+            children: const [
+              ScheduleRowTimeWidget(
+                configuration: ddd,
+              ),
+              SizedBox(width: 12),
+              Expanded(
+                child: ScheduleRowSessionWidget(
+                  configuration: configuration,
+                ),
+              ),
+            ],
           ),
-          SizedBox(width: 12),
-          Expanded(
-            child: ScheduleRowSessionWidget(
-              configuration: configuration,
+        ),
+        Positioned.fill(
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(10),
+              onTap: () =>
+                  Navigator.of(context).pushNamed(Screens.sessionDetials),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
