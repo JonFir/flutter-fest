@@ -11,12 +11,18 @@ class SessionDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       floatingActionButton: const _AddToFavoriteWidget(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: maxScreenWidth),
           child: ListView(
+            padding: EdgeInsets.zero,
             children: const [
               _HeaderWidget(),
               _SessionTitleWidget(),
@@ -130,8 +136,18 @@ class _HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: const [
-        _SpeakerInfoWidget(),
+      children: [
+        Positioned(
+          left: 0,
+          top: 0,
+          right: 0,
+          bottom: 0,
+          child: Image.asset(
+            AppImages.speakerBackground,
+            fit: BoxFit.fill,
+          ),
+        ),
+        const _SpeakerInfoWidget(),
       ],
     );
   }
@@ -175,7 +191,21 @@ class _SpeakerInfoWidget extends StatelessWidget {
               ],
             ),
           ),
-          const Placeholder(),
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: FractionallySizedBox(
+                widthFactor: 208 / 375,
+                child: Image.asset(
+                  AppImages.photoMock,
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
