@@ -1,0 +1,12 @@
+{
+    "helloWorld": "Привет мир  {name}",
+    "@helloWorld": {
+        "description": "Greet the user by their name.",
+        "placeholders": {
+            "name": {
+                "type": "String",
+                "example": "Jane"
+            }
+        }
+    }
+}

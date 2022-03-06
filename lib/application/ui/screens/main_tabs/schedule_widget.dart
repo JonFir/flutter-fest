@@ -4,6 +4,7 @@ import 'package:flutter_fest/application/ui/widgets/dialogs/dialog_widget.dart';
 import 'package:flutter_fest/application/ui/widgets/shedule_row/schedule_row_break_widget.dart';
 import 'package:flutter_fest/application/ui/widgets/shedule_row/schedule_row_widget.dart';
 import 'package:flutter_fest/resources/resources.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ScheduleWidget extends StatelessWidget {
   const ScheduleWidget({Key? key}) : super(key: key);
@@ -38,7 +39,7 @@ class ScheduleWidget extends StatelessWidget {
               onPressed: () {
                 showOverlay(context);
               },
-              child: const Text("asdasds"),
+              child: Text(AppLocalizations.of(context)!.helloWorld("Max")),
             ),
           ),
           SliverList(
