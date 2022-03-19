@@ -251,6 +251,160 @@ class _ScheduleInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, top: 24, right: 20),
+      child: Row(
+        children: const [
+          _ScheduleInfoElementWidget(
+            label: "Старт",
+            text: "8:00",
+          ),
+          SizedBox(width: 16),
+          _ScheduleInfoElementWidget(
+            label: "Секция",
+            text: "№ 1",
+          ),
+        ],
+      ),
+    );
   }
+}
+
+class _ScheduleInfoElementWidget extends StatelessWidget {
+  final String label;
+  final String text;
+
+  const _ScheduleInfoElementWidget({
+    Key? key,
+    required this.label,
+    required this.text,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 76,
+      height: 60,
+      decoration: const BoxDecoration(
+        color: AppColors.darkSecondary,
+        borderRadius: BorderRadius.all(Radius.circular(16)),
+      ),
+      child: GradientBorder(
+        borderWidth: 2,
+        radius: 16,
+        gradient: const RadialGradient(
+          center: Alignment(0.3, -1.3),
+          radius: 1.0,
+          colors: [
+            Color(0xFF50AF64),
+            Color(0xFF3D734D),
+            Color(0xFF3D734D),
+            Color(0xFF206D82),
+          ],
+          stops: [
+            0.35,
+            0.59,
+            0.74,
+            0.91,
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 12,
+            top: 10,
+            right: 20,
+            bottom: 10,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                label,
+                style: AppTextStyle.snackText.copyWith(
+                  color: AppColors.darkText,
+                ),
+              ),
+              Text(
+                text,
+                style: AppTextStyle.timeText.copyWith(
+                  color: AppColors.white88,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class GradientBorder extends StatelessWidget {
+  final double borderWidth;
+  final double radius;
+  final Gradient gradient;
+  final Widget child;
+
+  const GradientBorder({
+    Key? key,
+    required this.borderWidth,
+    required this.radius,
+    required this.gradient,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      painter: _GradientPainter(
+        borderWidth: borderWidth,
+        radius: radius,
+        gradient: gradient,
+      ),
+      child: child,
+    );
+  }
+}
+
+class _GradientPainter extends CustomPainter {
+  final double borderWidth;
+  final double radius;
+  final Gradient gradient;
+
+  _GradientPainter({
+    required this.borderWidth,
+    required this.radius,
+    required this.gradient,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final outerRect = Offset.zero & size;
+    final outerRRect = RRect.fromRectAndRadius(
+      outerRect,
+      Radius.circular(radius),
+    );
+
+    final innerRect = Rect.fromLTWH(
+      borderWidth,
+      borderWidth,
+      size.width - borderWidth * 2,
+      size.height - borderWidth * 2,
+    );
+    final innerRRect = RRect.fromRectAndRadius(
+      innerRect,
+      Radius.circular(radius - borderWidth),
+    );
+
+    final paint = Paint()..shader = gradient.createShader(outerRect);
+
+    final outerPath = Path()..addRRect(outerRRect);
+    final innerPath = Path()..addRRect(innerRRect);
+    final path = Path.combine(PathOperation.difference, outerPath, innerPath);
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => oldDelegate != this;
 }
