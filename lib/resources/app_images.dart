@@ -7,6 +7,7 @@ class AppImages {
   static const String bookmarkFull = 'assets/images/bookmark_full.png';
   static const String calendar = 'assets/images/calendar.png';
   static const String calendarFull = 'assets/images/calendar_full.png';
+  static const String easterEggLarge = 'assets/images/easter_egg_large.png';
   static const String photoMock = 'assets/images/photo_mock.png';
   static const String point = 'assets/images/point.png';
   static const String pointFull = 'assets/images/point_full.png';
