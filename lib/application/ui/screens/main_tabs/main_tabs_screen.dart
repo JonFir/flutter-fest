@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fest/application/ui/screens/favorites_screen.dart';
 import 'package:flutter_fest/application/ui/screens/main_tabs/main_tabs_view_model.dart';
 import 'package:flutter_fest/application/ui/screens/main_tabs/schedule_widget.dart';
 import 'package:flutter_fest/resources/resources.dart';
@@ -28,12 +29,7 @@ class _BodyWidget extends StatelessWidget {
       index: currentIndex,
       children: const [
         ScheduleWidget(),
-        Center(
-          child: Text(
-            "2",
-            style: TextStyle(color: Colors.red),
-          ),
-        ),
+        FavoritesScreen(),
         Center(
           child: Text(
             "3",
